@@ -237,8 +237,8 @@ static NSString *const DMAPIVersion = @"2.9.3";
                                              userInfo:userInfo];
             }
 
-            if ([self.delegate respondsToSelector:@selector(dailymotionPlayer:didReceiveEvent:)]) {
-                [self.delegate dailymotionPlayer:self didReceiveEvent:eventName];
+            if ([self.delegate respondsToSelector:@selector(dailymotionPlayer:didReceiveEvent:withPayload:)]) {
+                [self.delegate dailymotionPlayer:self didReceiveEvent:eventName withPayload:[data copy]];
             }
         }
 
